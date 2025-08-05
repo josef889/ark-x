@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // bubble sort
+function bubbleSort(arr) {    //switch places
+    let n = arr.length
+    for(i=0;i<n-1;i++){
+        for(j=0;j<n-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                let temp = arr[j+1]
+                arr[j+1]=arr[j]
+                arr[j] = temp
+            }
+        }
+    }
+    return arr
+}
+
+console.log(bubbleSort([5, 2, 8, 1])); // [1, 2, 5, 8]
+
+
+         function SelectionSort(array){
+                        for(i=0;i<array.length-1;i++){
+                            let min=i;
+                            for(j=i+1;j<array.length;j++){
+                                if(array[j]<array[min]){
+                                    min=j
+                                }
+                            }
+                            if(!(min===i)){
+                            let temp=array[i]
+                            array[i]=array[min]
+                            array[min]=temp
+                        }
+                        }
+                    return array
+                }
+
+
+            //need to revise !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // 3. Insertion Sort
+            function insertionSort(array) {
+                    // Start from second element, assume first is sorted
+                    for (let i = 1; i < array.length; i++) {
+                        let current = array[i]; // take current value to insert
+                        let j = i - 1; // start comparing from previous element
+                        // Move elements greater than current to the right
+                        while (j >= 0 && array[j] > current) {
+                            array[j + 1] = array[j]; // shift value to right
+                            j--; // move backward
+                        }
+                        array[j + 1] = current; // insert current in correct position
+                    }
+                    return array; // return sorted array
+                }
+
+                // 4. Linear Search
+                //##################################################
+                // Go through each element in the array
+
+                function linearSearch(arr,value){
+                    for(i=0;i<arr.length;i++){
+                        if(arr[i]===value){
+                           return i // return index if value is found
+                        }
+                }
+                        return -1
+                }
+
+                // 5. Binary Search  cute from half
+
+                function binarySearch(arr, target) {
+                        let start =0;
+                        let end = arr.length-1;    //[1, 3, 5, 7, 9, 11]
+                        while(start<=end){
+                            let middle=Math.floor((start+end)/2);
+                            if(arr[middle]===target){
+                                return middle
+                            }else if(arr[middle]<target){
+                                start=middle+1
+                            }else{
+                                end = middle-1
+                            }
+
+                        
+                        }
+                         return -1
+
+
+                        }
+
+
+
+                // binarySearch  myMethode but its note a binary ###################################################
+                function binarySearch5(arr, target) {
+                            let middle1=Math.floor(arr.length/2)
+                            if(arr[middle1]>target){
+                                let firstHalf= arr.slice(0,middle1);
+                                    console.log('first half : '+ firstHalf);
+                                for(i=0;i<firstHalf.length;i++){
+                                    if(firstHalf[i]===target){
+                                        return i
+                                    }
+                                }
+
+                            }else{
+                                let secondHalf= arr.slice(middle1);
+                                console.log('secondHalf : '+ secondHalf);
+                                for(i=0;i<secondHalf.length;i++){
+                                    if(secondHalf[i]===target){
+                                        return i+middle1
+                                    }
+                                }
+                            }
+
+                            return -1
+
+
+                        }
+
+
+                        console.log(binarySearch5([1, 3, 5, 7, 9, 11], 7));   // 3
+                        console.log(binarySearch5([1, 3, 5, 7, 9, 11], 4));   // -1
+                        console.log(binarySearch5([2, 4, 6, 8, 10, 12], 2));  // 0
+                        console.log(binarySearch5([2, 4, 6, 8, 10, 12], 12)); // 5
+
+
+                // Test sorting functions
+console.log("Bubble Sort:", bubbleSort([6, 2, 4, 1, 5, 3]));
+console.log("Selection Sort:", SelectionSort([7, 3, 9, 1]));
+console.log(SelectionSort([8,7,2,6,4,1]))
+
+console.log("Insertion Sort:", insertionSort([7, 3, 9, 1]));
+
+// Test linear search
+console.log("Linear Search:", linearSearch([5, 3, 8, 2], 8)); // → 2
+console.log("Linear Search (not found):", linearSearch([5, 3, 8, 2], 7)); // → null
+
+// Test binary search (must use a sorted array)
+console.log("Binary Search:", binarySearch([1, 3, 5, 7, 9, 11], 9)); // → 4
+console.log("Binary Search (not found):", binarySearch([1, 3, 5, 7, 9, 11], 6)); // → null
+
+
+
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //calcule la somme des nombre dans tableaux
+   function sum(numbers){
+        let lgt=numbers.length
+        let total =0;
+        for(i=0;i<lgt;i++){
+                total+=numbers[i];
+        }
+        return total
+   }
+   console.log(sum([1,2,3]))
+        //if number is 2 4 6 ...... do plus
+    function countEven(numbers){
+        let lgt=numbers.length
+        let count =0;
+        for(i=0;i<lgt;i++){
+            if(numbers[i]%2==0){
+                    count++
+            }
+        }
+        return count
+   }
+
+   function double(numbers) {
+    return numbers.map(n => n * 2);
+}
+
+console.log(double([3, 2])); // Output: [6, 4]
+
+    //the pair socks
+    function sockMerchant(socks){
+            let count=0;
+            let sorted = socks.sort((a,b)=>(a-b));
+            console.log(sorted)
+
+            for(i=0;i<socks.length;i++){
+                if(sorted[i]===sorted[i+1]){
+                    count++
+                    i++
+                }
+            }
+            return count;
+}
+console.log(sockMerchant([1, 2, 1, 2, 1, 3, 2]))
+
+
+
+        
+
+</script>
+</html>
