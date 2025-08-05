@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log('Task 1 : Warm up !  ')
+    //Task 1 : Warm up !
+
+        const persone ={
+            firstname:'youssef',
+            lastname: 'fakhi',
+            age:22,
+            get fullName(){
+                return this.firstname+' '+this.lastname
+            },
+            set fullName(value){
+                const splite = value.split(' ');
+                this.firstname=splite[0];
+                this.lastname=splite[1];
+            }
+        }
+        console.log(persone.fullName) // youssef fakhi
+        persone.fullName='hamid ouni'
+        console.log(persone.fullName)//hamid ouni
+        console.log(persone.firstname) // hamid
+
+
+
+        console.log('Task 2 : Are you Older Than me ?')
+        //Task 2 : Are you Older Than me ?
+        class Perssone {
+            constructor(name,age){
+                this.name =name,
+                this.age=age
+            }
+            CalcAge(value){
+                if(value.age>this.age){
+                    return(value.name+'is older than me.');
+                }else if(value.age<this.age){
+                    return(value.name+'is younger than me.');
+
+                }else if(value.age===this.age){
+                    return(value.name+'is the same age as me.');
+
+                }
+            }
+        }
+        let me = new Perssone('youssef',22);//me
+        let p1 = new Perssone('ahmed ',25);//others
+        let p2 = new Perssone('sara ',20);
+        let p3 = new Perssone('saad ',22);
+        console.log(me.CalcAge(p3));
+
+        //Task 3 : Most Occurred
+        console.log('Task 3 : Most Occurred')
+
+        let arr = [4, 2, 2, 7, 2];
+
+        let msfa = {};//objet 
+
+        for(i=0;i<arr.length;i++){// lopp on table 
+            let value_in_table=arr[i]; //
+            if(msfa[value_in_table]){
+                msfa[value_in_table]++    // if the number is in msfa do +1
+            }else{
+                msfa[value_in_table]=1   // if its  ot  
+            }
+            
+        }
+        console.log(msfa)
+
+
+       var i = 1;
+        do {
+            console.log("Value of i is:", i);
+            i++;
+        } while (i < 5);
+
+
+
+</script>
+</html>
