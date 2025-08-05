@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Factorial and Digit Count</title>
+</head>
+<body>
+</body>
+<script>
+    // Task 1: Factorial of num Write a program that calculates the factorial of a number: 
+    
+    let num = 5;
+    let res = 1;
+    for (let i = 1; i <= num; i++) {
+        res = res * i;
+    }
+    console.log("Factorial of", num, "is:", res); // Output: 120
+
+    // Task 2: Count digits in nombre
+    var nombre = 123542;
+    let count = 0;
+    let temp = nombre; // copy to avoid modifying nombre
+    while (temp > 0) {
+        temp = Math.floor(temp / 10);
+        count++;
+    }
+    console.log("Number of digits:", count); // Output: 6
+    
+    //Task 3 :  Time to draw!
+    let rows = 4;
+    for(let i=1; i<=rows; i++){
+        let space=' '.repeat(rows - i);      
+        let njm='*'.repeat(i * 2 - 1); //2 stars added by ligne 
+        console.log(space + njm);
+    }
+
+    console.log('Functions & Reusability')
+
+    //Task 1 : Going back in Time 
+    console.log('Task 1 : Going back in Time !')
+    //1
+    function factorial(n){
+        let val=1;
+        for(let i=1; i<=n; i++){
+            val *= i;
+        }
+        return val;
+    }
+    console.log(factorial(5));
+
+    //2
+    function nDgits(num){
+        if(num === 0) return 1; // handle zero do thry are no problem 
+        let count= 0;
+        let temp = Math.abs(num); // handle negatives make negative positive 
+        while(temp > 0){
+            temp = Math.floor(temp / 10);
+            count++;
+        }
+        return count;
+    }
+    console.log(nDgits(123456));
+
+//Task 2 : The Extended Factorial
+//Use the factorial function you created to create another function that calculates the 
+
+    function combinator(p,n){
+        let a = factorial(n);
+        let b = factorial(p) * factorial(n - p);
+        let result = a / b;
+        return result;
+    }
+    console.log(combinator(2,5)); // added console log to see output
+
+
+   // Task 3 :  The Calculator
+
+
+    console.log('Task 3 :  The Calculator');
+    
+    function calculator(n1,d1,n2){
+        switch(d1){
+            case('+'):
+            console.log(n1+n2)
+            break;
+            case('-'):
+            console.log(n1-n2)
+            break;
+            case('*'):
+            console.log(n1*n2)
+            break;
+            case('/'):
+            console.log(n1/n2)
+            break;
+            case('%'):
+            console.log(n1%n2)
+            break;
+            case('c'):
+            console.log(Com(n2,n1))
+            break;
+
+            default:
+                console.log('erreur');
+
+        }
+
+
+    }
+            // The function call should look like this :
+        calculator(5, "+", 1) // 6
+        calculator(3, "*", -4) // -12
+        calculator(5, 'c', 2) // 10
+
+</script>
+</html>
