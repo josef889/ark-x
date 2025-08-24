@@ -1,0 +1,18 @@
+{
+    "low":{
+        "max":50000,
+        "pourcentage":0.05
+
+    },
+    "medium":{
+            "min":50000,
+            "max":100000,
+            "pourcentage":0.07
+    },        
+    "hight":{
+            "min":100000,
+            "pourcentage":0.10
+    }
+
+}
+

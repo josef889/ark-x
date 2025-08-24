@@ -27,9 +27,6 @@ async function hetWaiter() {
         }catch(error){
           console.log(error)
         }
-
-      
-
 }
 
 
